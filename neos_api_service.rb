@@ -1,8 +1,4 @@
 class NeosApiService
-    # def get_asteroids_data
-        
-    # end
-
     def conn(date)
         Faraday.new(
          url: 'https://api.nasa.gov',
