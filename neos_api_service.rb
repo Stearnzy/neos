@@ -1,16 +1,22 @@
 class NeosApiService
-    def conn(date)
+    def get_asteroids(date)
+        response = retreive_data(date)
+        parse(response, date)
+    end
+
+private
+    def access_api(date)
         Faraday.new(
          url: 'https://api.nasa.gov',
          params: { start_date: date, api_key: ENV['nasa_api_key']}
           )
     end
 
-    def asteroids_list_data(date)
-        conn(date).get('/neo/rest/v1/feed')
+    def retreive_data(date)
+        access_api(date).get('/neo/rest/v1/feed')
     end
 
-    def parsed_asteroids_data(date)
-        JSON.parse(asteroids_list_data(date).body, symbolize_names: true)[:near_earth_objects][:"#{date}"]
+    def parse(response, date)
+        JSON.parse(response.body, symbolize_names: true)[:near_earth_objects][:"#{date}"]
     end
 end

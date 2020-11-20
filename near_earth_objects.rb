@@ -10,7 +10,7 @@ Figaro.load
 
 class NearEarthObjects
   def self.find_neos_by_date(date)
-    parsed_asteroids_data = NeosApiService.new.parsed_asteroids_data(date)
+    parsed_asteroids_data = NeosApiService.new.get_asteroids(date)
     # conn = Faraday.new(
     #   url: 'https://api.nasa.gov',
     #   params: { start_date: date, api_key: ENV['nasa_api_key']}
