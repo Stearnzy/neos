@@ -13,4 +13,8 @@ class NeosApiService
     def asteroids_list_data(date)
         conn(date).get('/neo/rest/v1/feed')
     end
+
+    def parsed_asteroids_data(date)
+        JSON.parse(asteroids_list_data(date).body, symbolize_names: true)[:near_earth_objects][:"#{date}"]
+    end
 end
