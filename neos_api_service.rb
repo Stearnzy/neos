@@ -9,4 +9,8 @@ class NeosApiService
          params: { start_date: date, api_key: ENV['nasa_api_key']}
           )
     end
+
+    def asteroids_list_data(date)
+        conn(date).get('/neo/rest/v1/feed')
+    end
 end
