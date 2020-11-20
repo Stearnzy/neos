@@ -1,4 +1,6 @@
 class Asteroid
+    attr_reader :name, :diameter, :miss_distance
+
     def initialize(data)
         @name = data[:name]
         # Diameter is a FLOAT
