@@ -43,6 +43,7 @@ class NearEarthObjects
         diameter: "#{astroid.diameter} ft", 
         miss_distance: "#{astroid.miss_distance} miles"
       }
+    end
 
     # formatted_astroid_data = parsed_astroids_data.map do |astroid|
     #   {
@@ -50,7 +51,7 @@ class NearEarthObjects
     #     diameter: "#{astroid[:estimated_diameter][:feet][:estimated_diameter_max].to_i} ft",
     #     miss_distance: "#{astroid[:close_approach_data][0][:miss_distance][:miles].to_i} miles"
     #   }
-    end
+    # end
 
     {
       astroid_list: formatted_astroid_data,
