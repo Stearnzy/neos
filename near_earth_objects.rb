@@ -40,8 +40,8 @@ class NearEarthObjects
     formatted_astroid_data = astroid_objects.map do |astroid|
       {
         name: astroid.name, 
-        diameter: "#{astroid.diameter} ft", 
-        miss_distance: "#{astroid.miss_distance} miles"
+        diameter: "#{astroid.diameter.to_i} ft", 
+        miss_distance: "#{astroid.miss_distance.to_i} miles"
       }
     end
 
