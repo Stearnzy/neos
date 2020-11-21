@@ -1,5 +1,5 @@
 class NeosApiService
-    def get_asteroids(date)
+    def get_astroids(date)
         response = retreive_data(date)
         parse(response, date)
     end
