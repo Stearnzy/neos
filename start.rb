@@ -10,11 +10,6 @@ require_relative 'neos_view'
 # puts "Please enter a date in the following format YYYY-MM-DD."
 # print ">>"
 
-
-#==============================================
-# HOW CAN THIS METHOD BE CALLED ON A CLASS THAT HASN'T BEEN INITIALIZED YET????
-  # BY DEFINING .SELF ON THE METHOD!!
-#==============================================
 NeosView.welcome_message
 
 date = gets.chomp
@@ -25,10 +20,6 @@ astroid_details = NearEarthObjects.find_neos_by_date(date)
 view = NeosView.new(astroid_details)
 
 view.display_info(date)
-
-#  HOW ABOUT INHERITANCE FOR VIEW TO HAVE ACCESS TO 
-
-
 
 # astroid_list = astroid_details[:astroid_list]
 # total_number_of_astroids = astroid_details[:total_number_of_astroids]
