@@ -35,7 +35,9 @@ class NearEarthObjects
   end
 
   def self.largest_astroid_diameter(date)
-    (objectify_astroids(date).max_by { |astroid| astroid.diameter }).diameter.to_i
+    objectify_astroids(date).max_by do |astroid|
+      astroid.diameter
+    end.diameter.to_i
   end
 
   def self.total_number_of_astroids(date)
